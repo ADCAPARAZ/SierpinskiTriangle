@@ -1,13 +1,3 @@
-int len = 500;
-int x1 = 0;
-int x2 = 
-int x3 = 250;
-int y1 = 
-int y2 = 
-int y3 = 
-
-
-
 
 public void setup()
 {
@@ -15,7 +5,7 @@ public void setup()
 }
 public void draw()
 {
-	triangle(0,500,500,500,250,0);
+	sierpinski(20,480,460);
 }
 public void mouseDragged()//optional
 {
@@ -23,12 +13,14 @@ public void mouseDragged()//optional
 }
 public void sierpinski(int x, int y, int len) 
 {
-	if(len <= 20){
+	if(len <= 0.99999999){
 		// draw triangle at x, y and base and height are len.
-		triangle(0,len,len,len,250,0);
+		triangle(x,y,x+len,y,x+len/2,y-len);
 	}
 	else
 	{
 		sierpinski(x,y,len/2);
+		sierpinski(x+len/2,y,len/2);
+		sierpinski(x+len/4,y-len/2,len/2);
 	}
 }
