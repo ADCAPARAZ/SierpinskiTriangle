@@ -18,7 +18,9 @@ public void sierpinski(int x, int y, int len)
 {
 	if(len <= amount){
 		// draw triangle at x, y and base and height are len.
+		fill(0,255,0);
 		triangle(x,y,x+len,y,x+len/2,y-len);
+		
 	}
 	else
 	{
